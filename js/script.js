@@ -24,7 +24,7 @@ formElement.addEventListener("submit", (event) => {
             result = fromCash * usdCash;
             break;
     }
-    scoreElement.innerText = `${result.toFixed(2)}zł`
+    scoreElement.innerText = `Otrzymasz ${result.toFixed(2)}zł`
 
 
 

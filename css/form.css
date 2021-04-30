@@ -1,16 +1,18 @@
 .form {
-    background-color: rgba(77, 48, 48, 0.438);
+    background-color: rgba(77, 48, 48, 0.555);
     border: 1px solid black;
     padding: 50px 40px;
     border-radius: 20px;
 }
 
 .form__legend {
+    color: rgba(255, 248, 220, 0.76);
     padding-bottom: 30px;
     font-size: 20px;
 }
 
 .form__label {
+    color: rgba(255, 248, 220, 0.76);
     font-size: 20px;
     width: 150px;
     display: inline-block;
@@ -30,10 +32,15 @@
 }
 
 .form__button {
+    color: rgba(255, 248, 220, 0.76);
     width: 100%;
-    color: cornsilk;
     border-radius: 20px;
-    margin: 30px  auto;
+    margin: 30px auto;
     padding: 10px 10px;
-    background-color: rgb(90, 95, 105);
+    background-color: rgba(90, 95, 105, 0.664);
+}
+
+.form__score {
+    color: rgba(255, 248, 220, 0.76);
+    font-size: 30px;
 }

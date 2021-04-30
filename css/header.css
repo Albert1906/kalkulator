@@ -1,5 +1,5 @@
 .header__title{
     font-size: xxx-large;
-    color: rgba(20, 11, 11, 0.521);
-    border-bottom: 1px solid rgba(39, 22, 22, 0.616);
+    color: currentColor;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
