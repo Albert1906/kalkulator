@@ -1,31 +1,60 @@
-let formElement = document.querySelector(".js-form");
-let inputElement = document.querySelector(".js-input");
-let selectElement = document.querySelector(".js-select");
-let scoreElement = document.querySelector(".js-score");
-let result;
 
-let euroCash = 4.56;
-let gbpCash = 5.28;
-let usdCash = 3.79;
+{
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let fromCash = +inputElement.value;
-    let selectCash = selectElement.value;
+    const calculateResult = (fromCash, selectCash) => {
+        const euroCash = 4.56;
+        const gbpCash = 5.28;
+        const usdCash = 3.79;
+        switch (selectCash) {
+            case "eur":
+                return fromCash * euroCash;
 
-    switch (selectCash) {
-        case "eur":
-            result = fromCash * euroCash;
-            break;
-        case "gbp":
-            result = fromCash * gbpCash;
-            break;
-        case "usd":
-            result = fromCash * usdCash;
-            break;
+            case "gbp":
+                return fromCash * gbpCash;
+
+            case "usd":
+                return fromCash * usdCash;
+
+        }
+    };
+
+    const updateResultText = (result) => {
+        const scoreElement = document.querySelector(".js-score");
+        scoreElement.innerText = `Otrzymasz ${result.toFixed(2)}zł`
     }
-    scoreElement.innerText = `Otrzymasz ${result.toFixed(2)}zł`
+
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        const inputElement = document.querySelector(".js-input");
+        const selectElement = document.querySelector(".js-select");
+
+
+        const fromCash = +inputElement.value;
+        const selectCash = selectElement.value;
+
+        let result = calculateResult(fromCash, selectCash);
+
+        updateResultText(result);
+
+
+    };
 
 
 
-});
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+
+
+    init();
+
+
+
+}
+
+
+
+
+
